@@ -6,6 +6,12 @@ require('dotenv').config()
 
 const productosRouter = require('./routes/productsR')
 const usuariosRouter = require('./routes/usersR')
+const carritoRouter = require('./routes/carritoR')
+const categoriesRouter = require('./routes/categoriesR')
+const clientesRouter = require('./routes/clientesR')
+const detallePedidoRouter = require('./routes/detallePedidoR')
+const historialRouter = require('./routes/historialR')
+const pedidosRouter = require('./routes/pedidosR')
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -17,7 +23,12 @@ app.use(express.json())
 
 app.use(productosRouter)
 app.use(usuariosRouter)
-
+app.use(carritoRouter)
+app.use(categoriesRouter)
+app.use(clientesRouter)
+app.use(detallePedidoRouter)
+app.use(historialRouter)
+app.use(pedidosRouter)
 
 app.get('/health',(req,res)=>{
 
