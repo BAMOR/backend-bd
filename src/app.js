@@ -5,6 +5,7 @@ const cors = require('cors')
 require('dotenv').config()
 
 const productosRouter = require('./routes/productsR')
+const usuariosRouter = require('./routes/usersR')
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -15,6 +16,7 @@ app.use(express.json())
 
 
 app.use(productosRouter)
+app.use(usuariosRouter)
 
 
 app.get('/health',(req,res)=>{
